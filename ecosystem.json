@@ -16,7 +16,7 @@
       "ref": "origin/master",
       "repo": "git@github.com:guofengs/mWechat.git",
       "path": "/www/mWechat/production",
-      "ssh_options": "StricHostKeyChecking=no",
+      "ssh_options": "StrictHostKeyChecking=no",
       "pre-deploy-local": "echo 'Deploy Done'",
       "env": {
         "NODE_ENV": "production"
