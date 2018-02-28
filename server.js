@@ -1,14 +1,21 @@
-const http = require('http');
+const Koa = require("Koa");
+const app = new Koa()
 
-const hostname = '127.0.0.1';
-const port = 3000;
+const asyncIo = () => {
+  return new Promise(resolve => setTimeout(resolve, 500));
+}
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('你好，世界.....\n');
-});
+const mid = () => async (ctx, next) => {
+  ctx.body = 'mark';
+  await next();
+  ctx.body = ctx.body + 'done';
+}
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+app.use(mid());
+app.use(async (ctx, next) => {
+  await asyncIo();
+  ctx.body += 'save'
+    await next();
+})
+
+app.listen(3000)
