@@ -17,6 +17,7 @@
       "repo": "git@github.com:guofengs/mWechat.git",
       "path": "/www/mWechat/production",
       "ssh_options": "StrictHostKeyChecking=no",
+      "post-deploy" : "npm install && pm2 reload ecosystem.config.js --env production",
       "pre-deploy-local": "echo 'Deploy Done'",
       "env": {
         "NODE_ENV": "production"
