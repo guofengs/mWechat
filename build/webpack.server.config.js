@@ -1,9 +1,3 @@
-/**
- * @author guofeng
- * @date   2018/3/1 下午1:42
- * @Description: webpack 服务端配置
- */
-
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const base = require('./webpack.base.config')
