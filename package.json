@@ -20,8 +20,6 @@
     "url": "https://github.com/guofengs/mWechat/issues"
   },
   "homepage": "https://github.com/guofengs/mWechat#readme",
-
-
   "scripts": {
     "start": "cross-env NODE_ENV=production node server",
     "dev": "node server",
